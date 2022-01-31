@@ -14,18 +14,23 @@ class StandardSecondArrow(
     paint: Paint
 ) : ClockDrawing(paint) {
 
-    override fun draw(canvas: Canvas,
-                      width: Float, height: Float, time: Calendar) {
+    override fun draw(
+        canvas: Canvas,
+        width: Float, height: Float, time: Calendar
+    ) {
         canvas.save().apply {
             canvas.rotate(
-                (6f * time.get(Calendar.SECOND)),
-                width/2f,
-                height/2f
+                (6f * (time.get(Calendar.SECOND)))
+                        + (0.006f * time.get(Calendar.MILLISECOND)),
+                width / 2f,
+                height / 2f
             )
-            canvas.drawLine(width/2f, height/2f,
-                width/2f,
-                (height /2f) - (height * 0.35f),
-                mPaint)
+            canvas.drawLine(
+                width / 2f, height / 2f,
+                width / 2f,
+                (height / 2f) - (height * 0.35f),
+                mPaint
+            )
             canvas.restoreToCount(this)
         }
     }
