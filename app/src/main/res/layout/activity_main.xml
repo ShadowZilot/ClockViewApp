@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <com.human_developing_soft.clock_app.ClockView
+    <com.human_developing_soft.clock_app.clock_view.ClockView
         android:id="@+id/clock"
         android:layout_width="300dp"
         android:layout_height="300dp"
