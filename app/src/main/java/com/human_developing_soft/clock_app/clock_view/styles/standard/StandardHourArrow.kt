@@ -18,7 +18,8 @@ class StandardHourArrow(
                       width: Float, height: Float, time: Calendar) {
         canvas.save().apply {
             canvas.rotate(
-                30f * time.get(Calendar.HOUR),
+                (30f * time.get(Calendar.HOUR))
+                        + (30f * (time.get(Calendar.MINUTE) / 60f)),
                 width/2f,
                 height/2f
             )
