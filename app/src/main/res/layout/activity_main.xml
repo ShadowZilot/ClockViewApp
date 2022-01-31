@@ -8,13 +8,15 @@
 
     <com.human_developing_soft.clock_app.clock_view.ClockView
         android:id="@+id/clock"
-        android:layout_width="300dp"
-        android:layout_height="300dp"
+        android:layout_width="310dp"
+        android:layout_height="310dp"
+        app:numbersSize="38sp"
         app:minuteArrowColor="@color/teal_200"
         app:hourArrowColor="@color/teal_200"
         app:secondArrowColor="@color/teal_200"
-        app:clockColor="@color/purple_200"
         app:clocStrokeColor="@color/purple_700"
+        app:hourArrowWidth="5dp"
+        app:minuteArrowWidth="3dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"

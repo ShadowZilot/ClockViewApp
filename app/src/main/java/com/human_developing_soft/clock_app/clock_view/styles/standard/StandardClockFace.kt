@@ -25,15 +25,14 @@ class StandardClockFace(
         if (mBitmap == null) {
             mBitmap = Bitmap.createBitmap(
                 width.toInt(),
-                height.toInt(), Bitmap.Config.RGB_565
+                height.toInt(), Bitmap.Config.ARGB_8888
             )
-        }
-        Canvas().apply {
-            this.setBitmap(mBitmap)
-            this.drawCircle(width / 2f, height / 2f, (width / 2f) - 5, mPaint)
-            mPaint.style = Paint.Style.STROKE
-            mPaint.color = mClockStrokeColor
-            this.drawCircle(width / 2f, height / 2f, (width / 2f) - 5, mPaint)
+            mBitmap!!.applyCanvas {
+                this.drawCircle(width / 2f, height / 2f, (width / 2f) - 5, mPaint)
+                mPaint.style = Paint.Style.STROKE
+                mPaint.color = mClockStrokeColor
+                this.drawCircle(width / 2f, height / 2f, (width / 2f) - 5, mPaint)
+            }
         }
         canvas.drawBitmap(mBitmap!!, 0f, 0f, mPaint)
     }
